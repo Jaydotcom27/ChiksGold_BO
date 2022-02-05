@@ -27,3 +27,13 @@
     margin-right: 20px;
     margin-top: 20px;
 }
+
+.filtersContainer{
+    display: flex;
+}
+
+.filterGroup{
+    display: flex;
+    width: 550px;
+    flex-direction: column;
+}
