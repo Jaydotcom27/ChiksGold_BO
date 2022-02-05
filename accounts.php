@@ -19,7 +19,7 @@
         $result_accounts = mysqli_query($conn, $query);
 
         while($account = mysqli_fetch_array($result_accounts)){ ?>
-        <div class="card accountCard" style="width: 18rem;">
+        <div class="card accountCard" style="width: 20rem;">
             <img src="https://chicks-products.s3.amazonaws.com/e7b25a55-2318-4c35-a287-533de0a00427" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $account['Title'] ?></h5>
@@ -28,11 +28,13 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><?php echo $account['Category'] ?></li>
                 <li class="list-group-item"><?php echo $account['Price'] ?></li>
-                <li class="list-group-item">Status</li>
+                <li class="list-group-item"><?php echo $account['Status'] ?></li>
             </ul>
             <div class="card-body">
-                <a href="database/edit_account.php?id=<?php echo $account['ID']?>" class="card-link btn btn-secondary"><i class="fa fa-marker"></i></a>
-                <a href="database/delete_account.php?id=<?php echo $account['ID']?>" class="card-link btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+                <a href="database/delete_account.php?id=<?php echo $account['ID']?>" class="card-link btn btn-success">  <i class="fas fa-shopping-cart"></i> Buy</a>
+                <a href="editAccount.php?id=<?php echo $account['ID']?>" class="card-link btn btn-secondary">  <i class="fa fa-marker"></i> Edit</a>
+                <a href="database/delete_account.php?id=<?php echo $account['ID']?>" class="card-link btn btn-danger">  <i class="fa fa-trash-alt"></i> Delete</a>
+
             </div>
         </div>
         <?php } ?>
