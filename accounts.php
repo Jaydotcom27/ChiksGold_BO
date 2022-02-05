@@ -6,6 +6,12 @@
 
 <div class="mainWrap">
     <h1>Accounts Overview</h1>
+    <?php if (isset($_SESSION['message'])) { ?>
+            <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
+                <?= $_SESSION['message'] ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php session_unset(); } ?>
     <div class="cardContainer">       
 
         <?php 
@@ -22,11 +28,11 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><?php echo $account['Category'] ?></li>
                 <li class="list-group-item"><?php echo $account['Price'] ?></li>
-                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">Status</li>
             </ul>
             <div class="card-body">
-                <a href="edit_account.php" class="card-link">Edit</a>
-                <a href="#" class="card-link">Another link</a>
+                <a href="database/edit_account.php?id=<?php echo $account['ID']?>" class="card-link btn btn-secondary"><i class="fa fa-marker"></i></a>
+                <a href="database/delete_account.php?id=<?php echo $account['ID']?>" class="card-link btn btn-danger"><i class="fa fa-trash-alt"></i></a>
             </div>
         </div>
         <?php } ?>
