@@ -6,172 +6,30 @@
 
 <div class="mainWrap">
     <h1>Accounts Overview</h1>
-    <div class="cardContainer">
-        <?php if (isset($_SESSION['message'])) { ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <?= $_SESSION['message'] ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="cardContainer">       
+
+        <?php 
+        $query = "SELECT * FROM accounts";
+        $result_accounts = mysqli_query($conn, $query);
+
+        while($account = mysqli_fetch_array($result_accounts)){ ?>
+        <div class="card accountCard" style="width: 18rem;">
+            <img src="https://chicks-products.s3.amazonaws.com/e7b25a55-2318-4c35-a287-533de0a00427" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $account['Title'] ?></h5>
+                <p class="card-text"><?php echo $account['Description'] ?></p>
             </div>
-        <?php session_unset(); } ?>
-        
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><?php echo $account['Category'] ?></li>
+                <li class="list-group-item"><?php echo $account['Price'] ?></li>
+                <li class="list-group-item">A third item</li>
+            </ul>
+            <div class="card-body">
+                <a href="edit_account.php" class="card-link">Edit</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-
-        
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-        
-        
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-        
-        
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-        
-        
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-        
-        
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-        
-        
-        <div class="card accountCard" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
+        <?php } ?>
     </div>
 </div>
 

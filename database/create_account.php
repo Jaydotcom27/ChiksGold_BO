@@ -1,6 +1,5 @@
 <?php
 include("../db.php");
-
     if (isset($_POST['create_account'])){
         $category = $_POST['category'];
         $title = $_POST['title'];
