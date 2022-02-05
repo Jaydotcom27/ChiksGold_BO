@@ -1,0 +1,29 @@
+.mainWrap{
+    display: flex;
+    flex-flow: column;
+    padding: 96px;
+
+}
+
+.formWrap{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 30%;
+    margin-top: 20px;
+}
+
+.formButton{
+    margin-top: 20px;
+
+}
+.cardContainer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.accountCard{
+    margin-right: 20px;
+    margin-top: 20px;
+}
