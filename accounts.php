@@ -20,8 +20,8 @@
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
                 <form class="filterGroup" name="titleSearchForm" method="POST" action="accounts.php">
-                Filter by title: <input type="text" name="title_input" value="" />
-                <input type="submit" name="titleSearch" value="Filter">
+                Filter by title: <input type="text" name="title_input" class="form-control" value="" />
+                <input type="submit" name="titleSearch" class="btn btn-primary" value="Filter">
                 </form>
             </div>
             </div>
@@ -36,9 +36,9 @@
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-                <form name="categorySearchForm" method="POST" action="accounts.php">
-                Filter by category: <input type="text" name="category_input" value="" />
-                <input type="submit" name="categorySearch" value="Filter">
+                <form class="filterGroup" name="categorySearchForm" method="POST" action="accounts.php">
+                Filter by category: <input type="text" name="category_input" class="form-control" value="" />
+                <input type="submit" name="categorySearch" class="btn btn-primary value="Filter">
                 </form>
             </div>
             </div>
@@ -53,9 +53,13 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
-                <form name="statusSearchForm" method="POST" action="accounts.php">
-                Filter by status: <input type="text" name="status_input" value="" />
-                <input type="submit" name="statusSearch" value="Filter">
+                <form class="filterGroup" name="statusSearchForm" method="POST" action="accounts.php">
+                Filter by status: 
+                <select name="status_input" value="" class="custom-select">
+                <option value="1">Sold</option>
+                <option value="0">Available</option>
+                </select>  
+                <input type="submit" name="statusSearch" class="btn btn-primary value="Filter">
                 </form>
             </div>
             </div>
@@ -70,9 +74,9 @@
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
             <div class="card-body">
-                <form name="descriptionSearchForm" method="POST" action="accounts.php">
-                Filter by description: <input type="text" name="description_input" value="" />
-                <input type="submit" name="descriptionSearch" value="Filter">
+                <form class="filterGroup" name="descriptionSearchForm" method="POST" action="accounts.php">
+                Filter by description: <input type="text" name="description_input" class="form-control" value="" />
+                <input type="submit" name="descriptionSearch" class="btn btn-primary value="Filter">
                 </form>
             </div>
             </div>
@@ -87,80 +91,14 @@
             </div>
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
             <div class="card-body">
-                <form name="rangeSearchForm" method="POST" action="accounts.php">
-                Filter by range: <input type="text" name="rangeFrom_input" value="" /> <input type="text" name="rangeTo_input" value="" />
-                <input type="submit" name="rangeSearch" value="Filter">
+                <form class="filterGroup" name="rangeSearchForm" method="POST" action="accounts.php">
+                Filter by range: <input type="number" placeholder="From" name="rangeFrom_input" class="form-control" value="" /> <input type="number" placeholder="To" name="rangeTo_input" class="form-control" value="" />
+                <input type="submit" name="rangeSearch" class="btn btn-primary value="Filter">
                 </form>            
             </div>
             </div>
         </div>
     </div>
-    <!-- <p>
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseTitle" role="button" aria-expanded="false" aria-controls="collapseTitle">
-            Title
-        </a>
-        </p>
-        <div class="collapse" id="collapseTitle">
-        <div class="card card-body">
-            <form name="titleSearchForm" method="POST" action="accounts.php">
-            Filter by title: <input type="text" name="title_input" value="" />
-            <input type="submit" name="titleSearch" value="Filter">
-            </form>
-        </div>
-    </div>
-    <p>
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
-            Category
-        </a>
-        </p>
-        <div class="collapse" id="collapseCategory">
-        <div class="card card-body">
-            <form name="categorySearchForm" method="POST" action="accounts.php">
-            Filter by category: <input type="text" name="category_input" value="" />
-            <input type="submit" name="categorySearch" value="Filter">
-            </form>
-        </div>
-    </div>
-    <p>
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseStatus" role="button" aria-expanded="false" aria-controls="collapseStatus">
-            Status
-        </a>
-        </p>
-        <div class="collapse" id="collapseStatus">
-        <div class="card card-body">
-            <form name="statusSearchForm" method="POST" action="accounts.php">
-            Filter by status: <input type="text" name="status_input" value="" />
-            <input type="submit" name="statusSearch" value="Filter">
-            </form>
-        </div>
-    </div>
-    <p>
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseDescription" role="button" aria-expanded="false" aria-controls="collapseDescription">
-            Description
-        </a>
-        </p>
-        <div class="collapse" id="collapseDescription">
-        <div class="card card-body">
-            <form name="descriptionSearchForm" method="POST" action="accounts.php">
-            Filter by description: <input type="text" name="description_input" value="" />
-            <input type="submit" name="descriptionSearch" value="Filter">
-            </form>
-        </div>
-    </div>
-    <p>
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseRange" role="button" aria-expanded="false" aria-controls="collapseRange">
-            Range
-        </a>
-        </p>
-        <div class="collapse" id="collapseRange">
-        <div class="card card-body">
-            <form name="rangeSearchForm" method="POST" action="accounts.php">
-            Filter by range: <input type="text" name="rangeFrom_input" value="" /> <input type="text" name="rangeTo_input" value="" />
-            <input type="submit" name="rangeSearch" value="Filter">
-            </form>
-        </div>
-    </div> -->
-
     <?php if (isset($_SESSION['message'])) { ?>
             <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
                 <?= $_SESSION['message'] ?>

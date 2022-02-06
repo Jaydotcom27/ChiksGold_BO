@@ -35,5 +35,7 @@
 .filterGroup{
     display: flex;
     width: 550px;
+    height: 130px;
     flex-direction: column;
+    justify-content: space-around;
 }

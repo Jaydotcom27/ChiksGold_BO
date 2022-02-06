@@ -42,7 +42,7 @@
 
             <div class="input-group mb-3">
             <span class="input-group-text"><i class="fas fa-coins"></i></span>
-            <input type="text" name="price" placeholder="Price"  class="form-control" value="<?php echo $price; ?>" aria-label="Amount (to the nearest dollar)">
+            <input type="number" name="price" placeholder="Price"  class="form-control" value="<?php echo $price; ?>" aria-label="Amount (to the nearest dollar)">
             <span class="input-group-text">.00</span>
             </div>
 

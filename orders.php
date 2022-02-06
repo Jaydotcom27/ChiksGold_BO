@@ -20,8 +20,13 @@
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
                 <form class="filterGroup" name="paymentSearchForm" method="POST" action="orders.php">
-                Filter by Payment Method: <input type="text" name="payment_input" value="" />
-                <input type="submit" name="paymentSearch" value="Filter">
+                Filter by Payment Method:
+                <select name="payment_input" class="form-control " aria-label="Default select example">
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Crypto">Crypto</option>
+                </select>
+                <input type="submit" name="paymentSearch" class="btn btn-primary" value="Filter">
                 </form>
             </div>
             </div>
@@ -36,10 +41,10 @@
             </div>
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
             <div class="card-body">
-                <form name="rangeSearchForm" method="POST" action="orders.php">
-                Filter by range: <input type="text" name="rangeFrom_input" value="" /> <input type="text" name="rangeTo_input" value="" />
-                <input type="submit" name="rangeSearch" value="Filter">
-                </form>            
+                <form class="filterGroup" name="rangeSearchForm" method="POST" action="orders.php">
+                Filter by range: <input type="number" placeholder="From" name="rangeFrom_input" class="form-control" value="" /> <input type="number" placeholder="To" name="rangeTo_input" class="form-control" value="" />
+                <input type="submit" name="rangeSearch" class="btn btn-primary" value="Filter">
+                </form>             
             </div>
             </div>
         </div>
@@ -53,9 +58,9 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
-                <form name="accountSearchForm" method="POST" action="orders.php">
-                Filter by Account: <input type="text" name="account_input" value="" />
-                <input type="submit" name="accountSearch" value="Filter">
+                <form class="filterGroup" name="accountSearchForm" method="POST" action="orders.php">
+                Filter by Account: <input type="text" name="account_input" class="form-control" value="" />
+                <input type="submit" name="accountSearch" class="btn btn-primary" value="Filter">
                 </form>
             </div>
             </div>
