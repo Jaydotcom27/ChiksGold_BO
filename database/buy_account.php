@@ -12,7 +12,6 @@ include("../db.php");
 
 
         $query = "INSERT INTO orders(OrderAccount, PaymentMethod, Total) VALUES ('$orderAccount', '$paymentMethod', '$total')";
-        // $query = "UPDATE accounts SET status = 1 WHERE id = $id";
         $result = mysqli_query($conn, $query);
         if(!$result){
             die("Query failed");

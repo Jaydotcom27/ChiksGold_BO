@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" href="accounts.php">
       <img src="https://chicksgold.com/home/circle-gold.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
       Chiks Gold
     </a>
