@@ -9,16 +9,24 @@
     <div class="formWrap">
 
         <?php if (isset($_SESSION['message'])) { ?>
-            <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
+            <div class="alert alert-<?= $_SESSION['message_type'];?> fade show" role="alert">
                 <?= $_SESSION['message'] ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <a href="/ChiksGold_BO/accounts.php" class="alert-link"> Go to accounts</a>
             </div>
         <?php session_unset(); } ?>
 
         <form action="database/create_account.php" method="POST">
             <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-gamepad"></i></span>
-            <input type="text" name="category" class="form-control" placeholder="Category" aria-label="Username" aria-describedby="basic-addon1">
+            <!-- <input type="text" name="category" class="form-control" placeholder="Category" aria-label="Username" aria-describedby="basic-addon1"> -->
+            <select name="category" value="" class="custom-select" placeholder="Category">
+                <option value="League of Legends">League of Legends</option>
+                <option value="Diablo III">Diablo III</option>
+                <option value="Runescape 2">Runescape 2</option>
+                <option value="Runescape 3">Runescape 3</option>
+                <option value="World of Warcraft">World of Warcraft</option>
+                <option value="WOW Classic">WOW Classic</option>
+            </select>
             </div>
 
             <div class="input-group mb-3">

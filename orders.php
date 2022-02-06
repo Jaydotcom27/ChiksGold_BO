@@ -66,7 +66,10 @@
             </div>
             </div>
         </div>
+        <a href="/ChiksGold_BO/orders.php"><button type="button" class="btn btn-outline-dark btn-lg btn-block mt-btn" style="bg-color:#626377;">Clear all Filters</button></a>
+
     </div>
+    
     <?php if (isset($_SESSION['message'])) { ?>
             <div class="alert alert-<?= $_SESSION['message_type'];?> fade show" role="alert">
                 <?= $_SESSION['message'] ?>

@@ -32,7 +32,15 @@
         <form action="database/edit_account.php?id=<?php echo $_GET['id']; ?>" method="POST">
             <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-gamepad"></i></span>
-            <input type="text" name="category" class="form-control" value="<?php echo $category; ?>" placeholder="Category" aria-label="Username" aria-describedby="basic-addon1">
+            <select name="category" value="" class="custom-select" placeholder="Category">
+                <option selected value="<?php echo $category; ?>">Select game category</option>
+                <option value="League of Legends">League of Legends</option>
+                <option value="Diablo III">Diablo III</option>
+                <option value="Runescape 2">Runescape 2</option>
+                <option value="Runescape 3">Runescape 3</option>
+                <option value="World of Warcraft">World of Warcraft</option>
+                <option value="WOW Classic">WOW Classic</option>
+            </select>
             </div>
 
             <div class="input-group mb-3">
@@ -53,19 +61,13 @@
 
             <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-handshake"></i></span>
-            <select name="status" value="<?php echo $status; ?>" class="custom-select">
-            <option value="1">Sold</option>
-            <option value="0">Available</option>
+            <select value="" name="status" class="custom-select">
+                <option selected value="<?php echo $status; ?>">Select account status</option>
+                <option value="1">Sold</option>
+                <option value="0">Available</option>
             </select>            
             </div>
-            
-            <!-- <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="fas fa-handshake"></i></span>
-            <input type="text" name="status" class="form-control" placeholder="Status" value="<?php echo $status; ?>" aria-label="Status" aria-describedby="basic-addon1">
-            </div> -->
 
-
-            
             <input type="submit" class="btn btn-success btn-lg formButton" name="edit_account" value="Edit Account">
         </form>
     </div>

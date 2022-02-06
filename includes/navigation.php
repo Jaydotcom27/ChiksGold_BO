@@ -13,7 +13,7 @@
           <a class="nav-link active" aria-current="page" href="/ChiksGold_BO/accounts.php">Accounts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/ChiksGold_BO/orders.php">Orders</a>
+          <a class="nav-link active" href="/ChiksGold_BO/orders.php">Orders</a>
         </li>
       </ul>
     </div>

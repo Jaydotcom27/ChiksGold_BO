@@ -11,7 +11,7 @@ include("../db.php");
         if(!$result){
             die("Query failed");
         } else {
-            $_SESSION['message'] = "Account created succesfully";
+            $_SESSION['message'] = "Account created succesfully.";
             $_SESSION['message_type'] = 'success';
             header("Location: http://localhost/ChiksGold_BO/createAccount.php");
         }
