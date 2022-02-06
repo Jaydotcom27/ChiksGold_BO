@@ -7,7 +7,8 @@
 <div class="mainWrap">
     <h1>Orders Overview</h1>
     <h5>Filter your data</h5>
-    <div class="accordion" id="accordionExample">
+    <div class="innerWrap">
+    <div class="accordion filterRange" id="accordionExample">
         <div class="card">
             <div class="card-header" id="headingOne">
             <h5 class="mb-0">
@@ -67,7 +68,7 @@
         </div>
     </div>
     <?php if (isset($_SESSION['message'])) { ?>
-            <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
+            <div class="alert alert-<?= $_SESSION['message_type'];?> fade show" role="alert">
                 <?= $_SESSION['message'] ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -92,7 +93,7 @@
             $result_orders = mysqli_query($conn, $query);
             while($orders = mysqli_fetch_array($result_orders)){ ?>
             <div class="card accountCard" style="width: 20rem;">
-                <span class="badge bg-success">Paid</span>
+                <span class="badge badge-success">Paid</span>
                 <div class="card-body">
                     <h5 class="card-title">Order #<?php echo $orders['ID'] ?></h5>
                     <p class="card-text">Paid with <?php echo $orders['PaymentMethod'] ?></p>
@@ -103,6 +104,7 @@
                 </ul>
             </div>
         <?php }  ?>
+    </div>
 </div>
             
 

@@ -13,6 +13,16 @@
     margin-top: 20px;
 }
 
+.innerWrap{
+    display: flex;
+}
+
+.filterRange{
+    width: 20%;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
 .formButton{
     margin-top: 20px;
 
@@ -34,8 +44,16 @@
 
 .filterGroup{
     display: flex;
-    width: 550px;
+    /* width: 550px; */
     height: 130px;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.mt-btn{
+    margin-top: 15px;
+}
+
+.btn-dark, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #626377 !important;
 }

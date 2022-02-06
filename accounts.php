@@ -5,9 +5,16 @@
 <?php include('includes/navigation.php') ?>
 
 <div class="mainWrap">
+    <?php if (isset($_SESSION['message'])) { ?>
+        <div class="alert alert-warning fade show" role="alert">
+            <?= $_SESSION['message'] ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php session_unset(); } ?>
     <h1>Accounts Overview</h1>
     <h5>Filter your data</h5>
-    <div class="accordion" id="accordionExample">
+    <div class="innerWrap">
+    <div class="accordion filterRange" id="accordionExample">
         <div class="card">
             <div class="card-header" id="headingOne">
             <h5 class="mb-0">
@@ -98,14 +105,8 @@
             </div>
             </div>
         </div>
-    </div>
-    <?php if (isset($_SESSION['message'])) { ?>
-            <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
-                <?= $_SESSION['message'] ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php session_unset(); } ?>
-        
+        <a href="/ChiksGold_BO/createAccount.php"><button type="button" class="btn btn-dark btn-lg btn-block mt-btn" style="bg-color:#626377;">Create new Account</button></a>
+    </div>  
     <div class="cardContainer">       
         <?php 
             $query = "SELECT * FROM accounts ";
@@ -139,19 +140,24 @@
                     <p class="card-text"><?php echo $account['Description'] ?></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><?php echo $account['Category'] ?></li>
-                    <li class="list-group-item"><?php echo $account['Price'] ?></li>
-                    <li class="list-group-item"><?php echo $account['Status'] ?></li>
+                    <li class="list-group-item"><i class="fas fa-gamepad px-2" style="color:#626377;"></i><?php echo $account['Category'] ?></li>
+                    <li class="list-group-item"><i class="fas fa-coins px-2" style="color:#626377;"></i><?php echo $account['Price'] ?></li>
+                    <?php if($account['Status'] == 0){?>
+                        <span class="badge badge-success">Available</span>
+                    <?php } else { ?>
+                        <span class="badge badge-primary">Sold</span>
+                    <?php } ?>
                 </ul>
                 <div class="card-body">
                     <?php if($account['Status'] == 0){?>
                         <a href="buyAccount.php?id=<?php echo $account['ID']?>" class="card-link btn btn btn-success">  <i class="fas fa-shopping-cart"></i> Buy</a> 
                     <?php } ?>
-                    <a href="editAccount.php?id=<?php echo $account['ID']?>" class="card-link btn btn-secondary">  <i class="fa fa-marker"></i> Edit</a>
+                    <a href="editAccount.php?id=<?php echo $account['ID']?>" class="card-link btn btn-dark">  <i class="fa fa-marker"></i> Edit</a>
                     <a href="database/delete_account.php?id=<?php echo $account['ID']?>" class="card-link btn btn-danger">  <i class="fa fa-trash-alt"></i> Delete</a>
                 </div>
             </div>
         <?php }  ?>
+    </div>
 </div>
             
 
